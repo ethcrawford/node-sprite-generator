@@ -1,0 +1,11 @@
+{
+  "name": "node-sprite-generator",
+  "version": "1.0.0",
+  "description": "no description",
+  "main": "index.js",
+  "author": "Ethan Crawford",
+  "license": "MIT",
+  "devDependencies": {
+    "node-sprite-generator": "^0.10.2"
+  }
+}
