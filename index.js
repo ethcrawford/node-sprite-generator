@@ -1,27 +1,24 @@
 // entry point
+var path = require('path');
 var nsg = require('node-sprite-generator');
+
+var PATHS = {
+  source: path.join(__dirname, 'source/images/'),
+  distSprite: path.join(__dirname, 'dist/sprite/'),
+  distStylus: path.join(__dirname, 'dist/stylus/')
+};
 
 nsg({
     src: [
-        'images/sprite/*.png'
+        PATHS.source + '*.png'
     ],
-    spritePath: 'images/sprite.png',
-    stylesheetPath: 'stylus/sprite.styl',
-    stylesheet: 'stylus',
-    stylesheetOptions: {
-      prefix: '',
-      pixelRatio: 1
-    },
-    layout: 'vertical',
+    spritePath: PATHS.distSprite + 'sprite.png',
+    stylesheetPath: PATHS.distStylus + 'sprite.styl',
     layoutOptions: {
-      padding: 0,
+      padding: 10,
       scaling: 1
     },
-    compositor: 'canvas',
-    compositorOptions: {
-      compressionLevel: 6, // 0-9
-      filter: 'all'
-    }
+    compositor: 'jimp'
 }, function (err) {
     console.log('Sprite generated!');
 });

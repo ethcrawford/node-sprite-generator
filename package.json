@@ -5,7 +5,11 @@
   "main": "index.js",
   "author": "Ethan Crawford",
   "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
   "devDependencies": {
+    "jimp": "^0.2.28",
     "node-sprite-generator": "^0.10.2"
   }
 }
